@@ -6,7 +6,6 @@ RUN apk add --no-cache ffmpeg
 WORKDIR /app
 
 COPY package*.json ./
-COPY videos ./
 
 RUN npm install
 
