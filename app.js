@@ -2,16 +2,15 @@ const cron = require('node-cron');
 const moment = require('moment');
 const ffmpeg = require('fluent-ffmpeg');
 
-const task = cron.schedule('55 14 * * *', () => {
+const task = cron.schedule('33 15 * * *', () => {
     console.log('Boom')
-    let streamKey = 'f85f9340-42f2-4f9d-9e67-d8feff41b218'
+    let streamKey = '05ad598b-7162-46be-a88b-7ba6e9f8d9bd'
 
     ffmpeg()
         .input('https://videos-for-live.nyc3.digitaloceanspaces.com/final.mp4')
         .format('flv')
-        .videoCodec('libx264')
-        .audioCodec('aac')
-        .fps(25)
+        .audioCodec('copy')
+        .videoCodec('copy')
         .on('start', function(commandLine) {
             console.log('Query : ' + commandLine);
         })
