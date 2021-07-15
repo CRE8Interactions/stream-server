@@ -2,9 +2,9 @@ const cron = require('node-cron');
 const moment = require('moment');
 const ffmpeg = require('fluent-ffmpeg');
 
-const task = cron.schedule('30 14 * * *', () => {
+const task = cron.schedule('55 14 * * *', () => {
     console.log('Boom')
-    let streamKey = 'c2264072-587b-410f-ae33-51d34bc1a70f'
+    let streamKey = 'f85f9340-42f2-4f9d-9e67-d8feff41b218'
 
     ffmpeg()
         .input('https://videos-for-live.nyc3.digitaloceanspaces.com/final.mp4')
